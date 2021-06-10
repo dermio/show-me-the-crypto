@@ -11,3 +11,11 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
+
+/* Max width */
+
+header > div, .content-main-footer {
+  border: 2px dotted red;
+  max-width: 960px;
+  margin: 0 auto;
+}
