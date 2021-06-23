@@ -10,11 +10,12 @@ function fetchCryptoData() {
   });
 
   // Change the URL parameter object into a URL query string.
-  let queryParams = params.toString();
+  let QUERY_PARAMS = params.toString();
 
-  fetch(API_URL + "?" + queryParams)
-    .then(response => response.json())
-    .then(data => console.log(data));
+  fetch(API_URL + "?" + QUERY_PARAMS)
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log("Error", err));
 }
 
 function displayFooterInfo() {
