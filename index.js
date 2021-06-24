@@ -1,3 +1,7 @@
+const STATE = {
+  COINS: []
+};
+
 function fetchCryptoData() {
   let API_URL = "https://api.coingecko.com/api/v3/coins/markets";
 
@@ -5,7 +9,7 @@ function fetchCryptoData() {
   a URLSearchParams object. The URL object has utility methods that work
   with the query string of a URL. */
   let params = new URLSearchParams({
-    vs_currency: "USD",
+    vs_currency: "usd",
     per_page: 100
   });
 
@@ -26,9 +30,15 @@ function displayFooterInfo() {
 }
 
 function startApp() {
-  // code
+  /* First runs on load. */
   displayFooterInfo();
   fetchCryptoData();
+
+  /* Runs on user input.
+  1. User clicks button to update coin list info.
+  2. User inputs text to filter for coin name or ticker.
+  */
+
 }
 
 function ready(fn) {
