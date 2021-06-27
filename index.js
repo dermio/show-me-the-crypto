@@ -2,6 +2,10 @@ const STATE = {
   COINS: []
 };
 
+function displayCoins() {
+  console.log("[[[ displayCoins ]]]", STATE.COINS);
+}
+
 function fetchCryptoData() {
   let API_URL = "https://api.coingecko.com/api/v3/coins/markets";
 
@@ -18,7 +22,13 @@ function fetchCryptoData() {
 
   fetch(API_URL + "?" + QUERY_PARAMS)
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => {
+      /* After making the API call, set the COINS array to the response data.
+      Then call displayCoins. */
+      STATE.COINS = data;
+      // console.log("[[[ fetchCryptoData ]]]", STATE.COINS);
+      displayCoins();
+    })
     .catch(err => console.log("Error", err));
 }
 
