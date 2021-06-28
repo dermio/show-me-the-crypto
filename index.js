@@ -2,9 +2,20 @@ const STATE = {
   COINS: []
 };
 
+function displayCoin(coin) {
+  let { name } = coin;
+
+  return `<div>${name}</div>`;
+}
+
 function displayCoinsList(state) {
   let { COINS } = state;
+  let coinsContainer = document.getElementsByClassName("coin-list")[0];
   console.log("[[[ displayCoinsList ]]]", COINS);
+
+  let coinsList = COINS.map(coin => displayCoin(coin)).join("");
+
+  coinsContainer.innerHTML = coinsList;
 }
 
 function fetchCryptoData() {
