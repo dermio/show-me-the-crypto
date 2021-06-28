@@ -2,8 +2,9 @@ const STATE = {
   COINS: []
 };
 
-function displayCoins() {
-  console.log("[[[ displayCoins ]]]", STATE.COINS);
+function displayCoinsList(state) {
+  let { COINS } = state;
+  console.log("[[[ displayCoinsList ]]]", COINS);
 }
 
 function fetchCryptoData() {
@@ -24,10 +25,10 @@ function fetchCryptoData() {
     .then(res => res.json())
     .then(data => {
       /* After making the API call, set the COINS array to the response data.
-      Then call displayCoins. */
+      Then call displayCoinsList. */
       STATE.COINS = data;
       // console.log("[[[ fetchCryptoData ]]]", STATE.COINS);
-      displayCoins();
+      displayCoinsList(STATE);
     })
     .catch(err => console.log("Error", err));
 }
