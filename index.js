@@ -32,7 +32,7 @@ function fetchCryptoData() {
   // Change the URL parameter object into a URL query string.
   let QUERY_PARAMS = params.toString();
 
-  fetch(API_URL + "?" + QUERY_PARAMS)
+  return fetch(API_URL + "?" + QUERY_PARAMS)
     .then(res => res.json())
     .then(data => {
       /* After making the API call, set the COINS array to the response data.
