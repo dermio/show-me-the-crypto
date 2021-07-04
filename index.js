@@ -2,9 +2,30 @@ const STATE = {
   COINS: []
 };
 
-function updateCoinsList() {
+function displayFilteredCoinsList(event) {
+  let text = event.target.value.toLowerCase();
+  let { COINS } = STATE;
   let coinsContainer = document.getElementsByClassName("coin-list")[0];
+
+  let coinsList = COINS
+    .filter(coin => (
+      coin.name.toLowerCase().includes(text) ||
+      coin.symbol.toLowerCase().includes(text)
+    ))
+    .map(coin => displayCoin(coin))
+    .join("");
+
+  coinsContainer.innerHTML = coinsList;
+}
+
+function updateCoinsList() {
+  let inputText = document.getElementsByTagName("input")[0];
+  let coinsContainer = document.getElementsByClassName("coin-list")[0];
+
+  // Remove any search coin text in input.
+  inputText.value = "";
   coinsContainer.innerHTML = "<h2 class='loading'>Loading...</h2>";
+
   displayCoinsList();
 }
 
@@ -78,11 +99,12 @@ function startApp() {
   displayCoinsList();
 
   /* Runs on user input. */
-  /* 1. User clicks button to update coins list info. */
+  /* User clicks button to update coins list info. */
   let button = document.getElementsByTagName("button")[0];
   button.addEventListener("click", updateCoinsList);
-  /* 2. User inputs text to filter for coin name or ticker. */
-
+  /* User inputs text to filter for coin name or ticker. */
+  let inputText = document.getElementsByTagName("input")[0];
+  inputText.addEventListener("input", displayFilteredCoinsList);
 }
 
 function ready(fn) {
