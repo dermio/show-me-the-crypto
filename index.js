@@ -8,14 +8,24 @@ function displayCoin(coin) {
   return `<div>${name}</div>`;
 }
 
-function displayCoinsList(state) {
-  let { COINS } = state;
-  let coinsContainer = document.getElementsByClassName("coin-list")[0];
-  console.log("[[[ displayCoinsList ]]]", COINS);
+function displayCoinsList() {
+  /* After getting the returned promise object and resulting value
+  from fetchCryptoData, in the then method callback use the STATE coins array
+  to create the coins list in HTML. */
+  return fetchCryptoData()
+    .then(() => {
+      let { COINS } = STATE;
+      let coinsContainer = document.getElementsByClassName("coin-list")[0];
+      console.log("[[[ displayCoinsList ]]]", COINS);
 
-  let coinsList = COINS.map(coin => displayCoin(coin)).join("");
+      let coinsList = COINS.map(coin => displayCoin(coin)).join("");
 
-  coinsContainer.innerHTML = coinsList;
+      coinsContainer.innerHTML = coinsList;
+    })
+    .catch(err => {
+      console.log("Error", err);
+      return err;
+    });
 }
 
 function fetchCryptoData() {
@@ -36,12 +46,17 @@ function fetchCryptoData() {
     .then(res => res.json())
     .then(data => {
       /* After making the API call, set the COINS array to the response data.
-      Then call displayCoinsList. */
+      The successful completion of the async operation returns the promise
+      object and the resulting value. In this case `undefined` is returned.
+      However the updated STATE object can also be returned. */
+
       STATE.COINS = data;
       // console.log("[[[ fetchCryptoData ]]]", STATE.COINS);
-      displayCoinsList(STATE);
     })
-    .catch(err => console.log("Error", err));
+    .catch(err => {
+      console.log("Error", err);
+      return err;
+    });
 }
 
 function displayFooterInfo() {
@@ -54,7 +69,7 @@ function displayFooterInfo() {
 function startApp() {
   /* First runs on load. */
   displayFooterInfo();
-  fetchCryptoData();
+  displayCoinsList();
 
   /* Runs on user input.
   1. User clicks button to update coin list info.
