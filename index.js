@@ -2,6 +2,12 @@ const STATE = {
   COINS: []
 };
 
+function updateCoinsList() {
+  let coinsContainer = document.getElementsByClassName("coin-list")[0];
+  coinsContainer.innerHTML = "<h2 class='loading'>Loading...</h2>";
+  displayCoinsList();
+}
+
 function displayCoin(coin) {
   let { name } = coin;
 
@@ -71,10 +77,11 @@ function startApp() {
   displayFooterInfo();
   displayCoinsList();
 
-  /* Runs on user input.
-  1. User clicks button to update coin list info.
-  2. User inputs text to filter for coin name or ticker.
-  */
+  /* Runs on user input. */
+  /* 1. User clicks button to update coins list info. */
+  let button = document.getElementsByTagName("button")[0];
+  button.addEventListener("click", updateCoinsList);
+  /* 2. User inputs text to filter for coin name or ticker. */
 
 }
 
