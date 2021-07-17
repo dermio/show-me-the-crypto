@@ -51,6 +51,17 @@ h1 {
   justify-content: center;
 }
 
+input {
+  border: 1px solid #B0BEC5;
+  padding: 10px 14px;
+  width: 300px;
+  border-radius: 3px;
+
+  margin-bottom: 1.45rem;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 /***** footer *****/
 
 footer > a {
