@@ -39,8 +39,16 @@ h1 {
 }
 
 /***** div for main and footer *****/
+
 .content-main-footer {
   padding: 0 1.0875rem 1.45rem;
+}
+
+/***** main *****/
+
+.coin-search {
+  display: flex;
+  justify-content: center;
 }
 
 /***** footer *****/
