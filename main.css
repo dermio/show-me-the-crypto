@@ -15,7 +15,6 @@ html {
 /* Max width */
 
 header > div, .content-main-footer {
-  border: 2px dotted red;
   max-width: 960px;
   margin: 0 auto;
 }
@@ -27,6 +26,7 @@ body {
 }
 
 header {
+  background-color: orange;
   margin-bottom: 1.45rem;
 }
 
@@ -36,11 +36,13 @@ header > div {
 
 h1 {
   margin: 0;
+  line-height: 1.1;
 }
 
 /***** div for main and footer *****/
 
 .content-main-footer {
+  /* border: 2px dotted red; */
   padding: 0 1.0875rem 1.45rem;
 }
 
