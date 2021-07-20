@@ -87,6 +87,10 @@ button {
 
 footer {
   margin-top: 2rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #4A4A4A;
+  line-height: 1.5;
 }
 
 footer > a {
