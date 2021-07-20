@@ -64,6 +64,11 @@ input {
   line-height: 1.5;
 }
 
+.coin-update {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 /***** footer *****/
 
 footer > a {
