@@ -85,6 +85,10 @@ button {
 
 /***** footer *****/
 
+footer {
+  margin-top: 2rem;
+}
+
 footer > a {
   color: #3273DC;
   text-decoration: none;
