@@ -32,7 +32,11 @@ function updateCoinsList() {
 function displayCoin(coin) {
   let { name } = coin;
 
-  return `<div>${name}</div>`;
+  return `
+    <div class="coin-container">
+      ${name}
+    </div>
+  `;
 }
 
 function displayCoinsList() {
