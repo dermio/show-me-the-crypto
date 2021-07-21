@@ -34,7 +34,9 @@ function displayCoin(coin) {
 
   return `
     <div class="coin-container">
-      ${name}
+      <div class="coin">${name}</div>
+      <div class="price-change">price change</div>
+      <div class="volume-cap-supply">volume cap supply</div>
     </div>
   `;
 }
