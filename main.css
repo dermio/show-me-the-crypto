@@ -95,9 +95,28 @@ button {
   padding: 0.75rem;
 }
 
-.image {
+.coin-container p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.coin {
+  display: flex;
+  align-items: center;
+}
+
+img {
   height: 32px;
   width: 32px;
+  margin-right: 0.75rem;
+}
+
+.coin-name {
+  display: flex;
+}
+
+.coin-name > :first-child {
+  margin-right: 0.75rem;
 }
 
 /***** footer *****/

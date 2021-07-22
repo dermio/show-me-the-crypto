@@ -30,14 +30,15 @@ function updateCoinsList() {
 }
 
 function displayCoin(coin) {
-  let { name, id, image } = coin;
+  let { name, id, symbol, image } = coin;
 
   return `
     <div id=${id} class="coin-container">
       <div class="coin">
-        <img src=${image} alt=${id} class="image">
+        <img src=${image} alt=${id}>
         <div class="coin-name">
           <p>${name}</p>
+          <p>${symbol}</p>
         </div>
       </div>
 
