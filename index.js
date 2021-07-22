@@ -36,7 +36,9 @@ function displayCoin(coin) {
     <div id=${id} class="coin-container">
       <div class="coin">
         <img src=${image} alt=${id} class="image">
-        ${name}
+        <div class="coin-name">
+          <p>${name}</p>
+        </div>
       </div>
 
       <div class="price-change">price change</div>
