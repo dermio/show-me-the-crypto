@@ -95,6 +95,11 @@ button {
   padding: 0.75rem;
 }
 
+.image {
+  height: 32px;
+  width: 32px;
+}
+
 /***** footer *****/
 
 footer {
