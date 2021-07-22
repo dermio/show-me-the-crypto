@@ -30,7 +30,11 @@ function updateCoinsList() {
 }
 
 function displayCoin(coin) {
-  let { name, id, symbol, image } = coin;
+  let {
+    name, id, symbol, image,
+    current_price: price,
+    price_change_percentage_24h: change
+  } = coin;
 
   return `
     <div id=${id} class="coin-container">
@@ -42,7 +46,14 @@ function displayCoin(coin) {
         </div>
       </div>
 
-      <div class="price-change">price change</div>
+      <div class="price-change">
+        <p>${price}</p>
+        ${change < 0
+          ? `<p class="change-pct red">${change}</p>`
+          : `<p class="change-pct green">${change}</p>`
+        }
+      </div>
+
       <div class="volume-cap-supply">volume cap supply</div>
     </div>
   `;
