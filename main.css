@@ -119,6 +119,23 @@ img {
   margin-right: 0.75rem;
 }
 
+.price-change {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.change-pct {
+  margin-left: 0.75rem;
+}
+
+.green {
+  color: #05B169;
+}
+
+.red {
+  color: #DF5F67;
+}
+
 /***** footer *****/
 
 footer {
