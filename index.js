@@ -62,8 +62,8 @@ function displayCoin(coin) {
       <div class="price-change">
         <p>${formatPrice(price)}</p>
         ${change < 0
-          ? `<p class="change-pct red">${change}</p>`
-          : `<p class="change-pct green">${change}</p>`
+          ? `<p class="change-pct red">${change.toFixed(2)}%</p>`
+          : `<p class="change-pct green">+${change.toFixed(2)}%</p>`
         }
       </div>
 
