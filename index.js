@@ -2,6 +2,19 @@ const STATE = {
   COINS: []
 };
 
+function formatPrice(price) {
+  let options = {
+    style: "currency",
+    currency: "USD",
+    /* A price less than one dollar displays to four decimal places.
+    A price greater than or equal to a dollar displays to two decimal
+    places. */
+    minimumFractionDigits: (price < 1) ? 4 : 2
+  };
+
+  return new Intl.NumberFormat("en-US", options).format(price);
+}
+
 function displayFilteredCoinsList(event) {
   let text = event.target.value.toLowerCase();
   let { COINS } = STATE;
@@ -47,7 +60,7 @@ function displayCoin(coin) {
       </div>
 
       <div class="price-change">
-        <p>${price}</p>
+        <p>${formatPrice(price)}</p>
         ${change < 0
           ? `<p class="change-pct red">${change}</p>`
           : `<p class="change-pct green">${change}</p>`

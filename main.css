@@ -128,11 +128,11 @@ img {
   margin-left: 0.75rem;
 }
 
-.green {
+.change-pct.green {
   color: #05B169;
 }
 
-.red {
+.change-pct.red {
   color: #DF5F67;
 }
 
