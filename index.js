@@ -67,7 +67,20 @@ function displayCoin(coin) {
         }
       </div>
 
-      <div class="volume-cap-supply">volume cap supply</div>
+      <div class="volume-cap-supply">
+        <div>
+          <p>Vol 24h:</p>
+          <p>volume</p>
+        </div>
+        <div>
+          <p>Cap:</p>
+          <p>cap</p>
+        </div>
+        <div>
+          <p>Supply:</p>
+          <p>supply</p>
+        </div>
+      </div>
     </div>
   `;
 }
