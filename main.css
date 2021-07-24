@@ -136,6 +136,18 @@ img {
   color: #DF5F67;
 }
 
+.volume-cap-supply {
+  display: flex;
+}
+
+.volume-cap-supply > div {
+  flex: 1 1 0;
+}
+
+.volume-cap-supply p {
+  text-align: end;
+}
+
 /***** footer *****/
 
 footer {
