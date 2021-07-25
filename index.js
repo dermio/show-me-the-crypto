@@ -2,6 +2,29 @@ const STATE = {
   COINS: []
 };
 
+function formatNumber(number) {
+  let num;
+
+  switch (true) {
+    case number < 1000:
+      return number;
+    case number < 10 ** 6:
+      num = number / 10 ** 3;
+      return `${num.toFixed(1)}K`;
+    case number < 10 ** 9:
+      num = number / 10 ** 6;
+      return `${num.toFixed(1)}M`;
+    case number < 10 ** 12:
+      num = number / 10 ** 9;
+      return `${num.toFixed(1)}B`;
+    case number < 10 ** 15:
+      num = number / 10 ** 12;
+      return `${num.toFixed(1)}T`;
+    default:
+      return "Rico Suave";
+  }
+}
+
 function formatPrice(price) {
   let options = {
     style: "currency",
@@ -46,7 +69,10 @@ function displayCoin(coin) {
   let {
     name, id, symbol, image,
     current_price: price,
-    price_change_percentage_24h: change
+    price_change_percentage_24h: change,
+    total_volume: volume,
+    market_cap: marketcap,
+    circulating_supply: supply
   } = coin;
 
   return `
@@ -58,7 +84,6 @@ function displayCoin(coin) {
           <p>${symbol}</p>
         </div>
       </div>
-
       <div class="price-change">
         <p>${formatPrice(price)}</p>
         ${change < 0
@@ -66,19 +91,18 @@ function displayCoin(coin) {
           : `<p class="change-pct green">+${change.toFixed(2)}%</p>`
         }
       </div>
-
       <div class="volume-cap-supply">
         <div>
           <p>Vol 24h:</p>
-          <p>volume</p>
+          <p>${formatNumber(volume)}</p>
         </div>
         <div>
           <p>Cap:</p>
-          <p>cap</p>
+          <p>${formatNumber(marketcap)}</p>
         </div>
         <div>
           <p>Supply:</p>
-          <p>supply</p>
+          <p>${formatNumber(supply)}</p>
         </div>
       </div>
     </div>
