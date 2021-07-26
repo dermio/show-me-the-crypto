@@ -94,11 +94,11 @@ function displayCoin(coin) {
       <div class="volume-cap-supply">
         <div>
           <p>Vol 24h:</p>
-          <p>${formatNumber(volume)}</p>
+          <p>$${formatNumber(volume)}</p>
         </div>
         <div>
           <p>Cap:</p>
-          <p>${formatNumber(marketcap)}</p>
+          <p>$${formatNumber(marketcap)}</p>
         </div>
         <div>
           <p>Supply:</p>

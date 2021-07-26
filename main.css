@@ -109,6 +109,10 @@ button {
   align-items: center;
 }
 
+.coin > div > :last-child {
+  text-transform: uppercase;
+}
+
 img {
   height: 32px;
   width: 32px;
