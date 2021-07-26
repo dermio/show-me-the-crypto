@@ -122,6 +122,7 @@ img {
 .price-change {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .change-pct {
