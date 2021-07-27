@@ -111,6 +111,7 @@ button {
 
 .coin > div > :last-child {
   text-transform: uppercase;
+  font-weight: 300;
 }
 
 img {
@@ -151,6 +152,10 @@ img {
 
 .volume-cap-supply > div {
   flex: 1 1 0;
+}
+
+.volume-cap-supply > div > :first-child {
+  font-weight: 300;
 }
 
 .volume-cap-supply p {
