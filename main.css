@@ -81,13 +81,22 @@ button {
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
   line-height: 1.5;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #039BE5;
 }
 
 .coin-container {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #CFD8DC;
   margin-top: -0.75rem;
   margin-bottom: 0.75rem;
   display: flex;
+}
+
+.coin-container:hover {
+  background-color: #F8FAFD;
 }
 
 .coin-container > div {
