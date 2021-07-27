@@ -95,6 +95,10 @@ button:hover {
   display: flex;
 }
 
+.coin-container:last-child {
+  margin-bottom: -0.75rem;
+}
+
 .coin-container:hover {
   background-color: #F8FAFD;
 }
