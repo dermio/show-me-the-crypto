@@ -76,9 +76,9 @@ function displayCoin(coin) {
   } = coin;
 
   return `
-    <div id=${id} class="coin-container">
+    <div id="${id}" class="coin-container">
       <div class="coin">
-        <img src=${image} alt=${id}>
+        <img src="${image}" alt="${id}">
         <div class="coin-name">
           <p>${name}</p>
           <p>${symbol}</p>
