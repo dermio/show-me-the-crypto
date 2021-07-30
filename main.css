@@ -168,18 +168,19 @@ img {
 }
 
 .volume-cap-supply {
-  display: flex;
+  /* By default this div won't display on smaller mobile screens. */
+  display: none;
 }
 
-.volume-cap-supply > div {
+.volume-cap-supply > div { /* Hidden when parent div hidden. */
   flex: 1 1 0;
 }
 
-.volume-cap-supply > div > :first-child {
+.volume-cap-supply > div > :first-child { /* Hidden when parent div hidden. */
   font-weight: 300;
 }
 
-.volume-cap-supply p {
+.volume-cap-supply p { /* Hidden when parent div hidden. */
   text-align: end;
 }
 
@@ -196,4 +197,13 @@ footer {
 footer > a {
   color: #3273DC;
   text-decoration: none;
+}
+
+/***** responsive web design for mobile first *****/
+
+@media only screen and (min-width: 768px) {
+  /* Show volume-cap-supply div when the screen is big. */
+  .volume-cap-supply {
+    display: flex;
+  }
 }
