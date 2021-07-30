@@ -149,6 +149,11 @@ img {
   margin-right: 0.75rem;
 }
 
+.coin-name > :last-child {
+  /* By default the symbol p tag won't display on smaller mobile screens. */
+  display: none;
+}
+
 .price-change {
   display: flex;
   justify-content: flex-end;
@@ -205,5 +210,12 @@ footer > a {
   /* Show volume-cap-supply div when the screen is big. */
   .volume-cap-supply {
     display: flex;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  /* Show the symbol p tag when the screen is big. */
+  .coin-name > :last-child {
+    display: block;
   }
 }
