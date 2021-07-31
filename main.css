@@ -211,6 +211,15 @@ footer > a {
   .volume-cap-supply {
     display: flex;
   }
+
+  /* On bigger screens center align the price and change percent p tags. */
+  .price-change > p {
+    flex: 1 1 0;
+  }
+
+  .price-change > :first-child {
+    text-align: end;
+  }
 }
 
 @media only screen and (min-width: 600px) {
