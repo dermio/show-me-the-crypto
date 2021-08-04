@@ -1,3 +1,5 @@
 # Show Me The Crypto
 
-A list of cryptocurrency information.
+A simple list of cryptocurrency market information.
+
+Built with HTML, CSS, and JavaScript.
