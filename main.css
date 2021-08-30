@@ -40,6 +40,11 @@ h1 {
   color: #FFF;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
+  display: inline;
+}
+
+h1:hover {
+  cursor: pointer;
 }
 
 /***** div for main and footer *****/

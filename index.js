@@ -176,6 +176,9 @@ function startApp() {
   /* User clicks button to update coins list info. */
   let button = document.getElementsByTagName("button")[0];
   button.addEventListener("click", updateCoinsList);
+  /* User clicks h1 to update coins list info. */
+  let h1 = document.getElementsByTagName("h1")[0];
+  h1.addEventListener("click", updateCoinsList);
   /* User inputs text to filter for coin name or ticker. */
   let inputText = document.getElementsByTagName("input")[0];
   inputText.addEventListener("input", displayFilteredCoinsList);
