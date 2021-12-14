@@ -25,14 +25,53 @@ function formatNumber(number) {
   }
 }
 
+function fractionDigits(price) {
+  // A price greater than or equal to 0.10 displays to two decimal places.
+  if (price >= 0.1) { return 2; }
+
+  /* Convert a number that's less than 0.10 to a string.
+  Whole numbers and tenths place values are zeros, i.e. 0.0X. */
+  let priceStr = price.toString();
+  /* Start the count at the hundredths place, `0.0X`, in the string.
+  This is index 3. */
+  let index = 3;
+
+  /* As soon as the first non-zero number is encountered, return the index
+  to stop the loop and exit the function. The non-zero number at the index,
+  and the next number at index + 1 will be included as significant digits
+  in the fraction price. */
+  while (index < priceStr.length) {
+    if (priceStr[index] !== "0") {
+      return index;
+    }
+    index++;
+  }
+
+  /* NOTE: The `minimumFractionDigits` is the number of digits to display
+  after the decimal point in the formatPrice function. By chance the string
+  index count and the `minimumFractionDigits` have the same value.
+
+  Example:
+  The number is 0.068, the string is `0.068`.
+  The `6` is the 4th character in the string, found at index 3, and
+  the number 6 is at the hundredths place in the number.
+  The `8` is the 5th character in the string, found at index 4, and
+  the number 8 is at the thousandths place in the humber.
+  The return of index 3, that is the number 6, happens to be
+  the thousandths decimal place of the number 8 at index 4.
+
+  Thus the `minimumFractionDigits` and index values are the same.
+  */
+}
+
 function formatPrice(price) {
   let options = {
     style: "currency",
     currency: "USD",
-    /* A price less than one dollar displays to four decimal places.
-    A price greater than or equal to a dollar displays to two decimal
-    places. */
-    minimumFractionDigits: (price < 1) ? 4 : 2
+    /* A price greater than or equal to 0.10 displays to two decimal places.
+    A price less than 0.10 will display the first non-zero digit to the right
+    of the decimal point, and the digit that follows it. */
+    minimumFractionDigits: fractionDigits(price)
   };
 
   return new Intl.NumberFormat("en-US", options).format(price);
