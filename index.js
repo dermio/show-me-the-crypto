@@ -125,9 +125,12 @@ function displayCoin(coin) {
       </div>
       <div class="price-change">
         <p>${formatPrice(price)}</p>
-        ${change < 0
-          ? `<p class="change-pct red">${change.toFixed(2)}%</p>`
-          : `<p class="change-pct green">+${change.toFixed(2)}%</p>`
+        ${
+          change === null
+            ? `<p class="change-pct">&#128123; &#128123; &#128123;</p>`
+            : change < 0
+            ? `<p class="change-pct red">${change.toFixed(2)}%</p>`
+            : `<p class="change-pct green">+${change.toFixed(2)}%</p>`
         }
       </div>
       <div class="volume-cap-supply">
