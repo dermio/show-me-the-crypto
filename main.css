@@ -1,4 +1,25 @@
-/* Default CSS */
+:root {
+  /* Material Design colors */
+  --blue-gray-100: #CFD8DC; /* coin container border */
+  --blue-gray-200: #B0BEC5; /* input border */
+  --blue-gray-500: #607D8B; /* header background */
+
+  /* coin container hover */
+  --blue-white: #F8FAFD;
+
+  /* Dark theme colors */
+  --dark-background-color-dark: #121212;
+  --dark-background-color-light: #282828;
+
+  --dark-coin-hover-dark: #202020;
+  --dark-coin-hover-light: #383838;
+
+  --dark-header: #B0BEC5;
+  --dark-header-font-color-dark: #121212;
+  --dark-header-font-color-light: #282828;
+
+  --dark-font-color: rgba(255, 255, 255, 90%);
+}
 
 html {
   -webkit-box-sizing: border-box;
