@@ -40,6 +40,36 @@ header > div, .content-main-footer {
   margin: 0 auto;
 }
 
+/***** dark theme *****/
+
+.dark {
+  background-color: var(--dark-background-color-light);
+}
+
+.dark header {
+  background: var(--dark-header);
+}
+
+.dark h1 {
+  color: var(--dark-header-font-color-light);
+}
+
+.dark .coin p, /* inside .coin-container */
+.dark .price-change p:first-child, /* inside .coin-container */
+.dark .volume-cap-supply p, /* inside .coin-container */
+.dark .loading,
+.dark .coin-update-button {
+  color: var(--dark-font-color);
+}
+
+.dark .dark-mode-toggle {
+  color: var(--dark-header-font-color-light);
+}
+
+.dark .coin-container:hover {
+  background: var(--dark-coin-hover-light);
+}
+
 /***** body, header, h1 *****/
 
 body {
