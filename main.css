@@ -83,6 +83,9 @@ header {
 
 header > div {
   padding: 1.45rem 1.0875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 h1 {
@@ -128,7 +131,7 @@ input {
   margin-bottom: 2rem;
 }
 
-button {
+.coin-update-button {
   background-color: #03A9F4;
   color: #FFF;
   border: none;
@@ -140,8 +143,20 @@ button {
   transition: background-color 0.2s ease;
 }
 
-button:hover {
+.coin-update-button:hover {
   background-color: #039BE5;
+  cursor: pointer;
+}
+
+.dark-mode-toggle {
+  color: #FFF;
+  border: 2px solid currentColor;
+  padding: 4px;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 2rem;
+  height: 2rem;
 }
 
 .loading {
