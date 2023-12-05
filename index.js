@@ -216,8 +216,8 @@ function startApp() {
 
   /* Runs on user input. */
   /* User clicks button to update coins list info. */
-  let button = document.getElementsByTagName("button")[0];
-  button.addEventListener("click", updateCoinsList);
+  let coinUpdateBtn = document.getElementsByClassName("coin-update-button")[0];
+  coinUpdateBtn.addEventListener("click", updateCoinsList);
   /* User clicks h1 to update coins list info. */
   let h1 = document.getElementsByTagName("h1")[0];
   h1.addEventListener("click", updateCoinsList);
