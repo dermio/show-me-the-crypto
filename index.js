@@ -1,6 +1,23 @@
 const STATE = {
-  COINS: []
+  COINS: [],
+  storedTheme: localStorage.getItem("theme")
 };
+
+/* Check if the dark theme was previously enabled by the user. If true enable
+the dark theme */
+if (STATE.storedTheme === "dark") { document.body.classList.add("dark"); }
+
+function darkModeToggle() {
+  if (STATE.storedTheme === "dark") {
+    STATE.storedTheme = "";
+    document.body.classList.remove("dark");
+    localStorage.setItem("theme", "");
+  } else {
+    STATE.storedTheme = "dark";
+    document.body.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  }
+}
 
 function formatNumber(number) {
   let num;
@@ -224,6 +241,9 @@ function startApp() {
   /* User inputs text to filter for coin name or ticker. */
   let inputText = document.getElementsByTagName("input")[0];
   inputText.addEventListener("input", displayFilteredCoinsList);
+  /* User clicks dark mode button to toggle between light and dark mode. */
+  let darkModeBtn = document.getElementsByClassName("dark-mode-toggle")[0];
+  darkModeBtn.addEventListener("click", darkModeToggle);
 }
 
 function ready(fn) {
