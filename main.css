@@ -70,6 +70,14 @@ header > div, .content-main-footer {
   background: var(--dark-coin-hover-light);
 }
 
+.dark footer {
+  color: var(--dark-font-color);
+}
+
+.dark footer > a {
+  color: var(--dark-font-color);
+}
+
 /***** body, header, h1 *****/
 
 body {
