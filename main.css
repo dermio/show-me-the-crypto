@@ -78,6 +78,10 @@ header > div, .content-main-footer {
   color: var(--dark-font-color);
 }
 
+.dark footer > a:hover {
+  color: var(--dark-header);
+}
+
 /***** body, header, h1 *****/
 
 body {
