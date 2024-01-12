@@ -188,7 +188,7 @@ function displayCoinsList() {
     });
 }
 
-function fetchCryptoData() {
+async function fetchCryptoData() {
   let API_URL = "https://api.coingecko.com/api/v3/coins/markets";
 
   /* Change the object with the API string parameters into
@@ -202,21 +202,19 @@ function fetchCryptoData() {
   // Change the URL parameter object into a URL query string.
   let QUERY_PARAMS = params.toString();
 
-  return fetch(API_URL + "?" + QUERY_PARAMS)
-    .then(res => res.json())
-    .then(data => {
-      /* After making the API call, set the COINS array to the response data.
-      The successful completion of the async operation returns the promise
-      object and the resulting value. In this case `undefined` is returned.
-      However the updated STATE object can also be returned. */
+  try {
+    let response = await fetch(API_URL + "?" + QUERY_PARAMS);
+    let data = await response.json();
+    /* After making the API call, set the COINS array to the response data.
+    The successful completion of the async operation returns the promise
+    object and the resulting value. In this case `undefined` is returned.
+    However the updated STATE object can also be returned. */
 
-      STATE.COINS = data;
-      // console.log("[[[ fetchCryptoData ]]]", STATE.COINS);
-    })
-    .catch(err => {
-      console.log("Error", err);
-      return err;
-    });
+    STATE.COINS = data;
+  } catch (err) {
+    console.log("Error", err);
+    return err;
+  }
 }
 
 function displayFooterInfo() {
