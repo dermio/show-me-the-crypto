@@ -168,24 +168,22 @@ function displayCoin(coin) {
   `;
 }
 
-function displayCoinsList() {
+async function displayCoinsList() {
   /* After getting the returned promise object and resulting value
   from fetchCryptoData, in the then method callback use the STATE coins array
   to create the coins list in HTML. */
-  return fetchCryptoData()
-    .then(() => {
-      let { COINS } = STATE;
-      let coinsContainer = document.getElementsByClassName("coin-list")[0];
-      console.log("[[[ displayCoinsList ]]]", COINS);
+  try {
+    await fetchCryptoData();
+    let { COINS } = STATE;
+    let coinsContainer = document.getElementsByClassName("coin-list")[0];
+    console.log("[[[ displayCoinsList ]]]", COINS);
 
-      let coinsList = COINS.map(coin => displayCoin(coin)).join("");
-
-      coinsContainer.innerHTML = coinsList;
-    })
-    .catch(err => {
-      console.log("Error", err);
-      return err;
-    });
+    let coinsList = COINS.map(coin => displayCoin(coin)).join("");
+    coinsContainer.innerHTML = coinsList;
+  } catch (err) {
+    console.log("Error", err);
+    return err;
+  }
 }
 
 async function fetchCryptoData() {
